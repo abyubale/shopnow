@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Button } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import route from "../../routes/route.json";
-import { addItem } from "../AddSubItem/AddSubSlice";
+import { addItem } from "../AddSubItem/addSubSlice";
 import { useDispatch } from "react-redux";
 import { useContext } from "react";
 import { UserDataContext } from "../../contexts/UserDataContexts";

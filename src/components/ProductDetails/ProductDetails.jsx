@@ -7,7 +7,7 @@ import {
   addItemByCount,
   decreaseQuantityByCount,
   increaseQuantityByCount,
-} from "../AddSubItem/AddSubSlice";
+} from "../AddSubItem/addSubSlice";
 import { UserDataContext } from "../../contexts/UserDataContexts";
 
 const ProductDetails = ({ productId }) => {
