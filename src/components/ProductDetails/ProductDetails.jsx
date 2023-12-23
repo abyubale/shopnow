@@ -11,6 +11,7 @@ import {
 import { UserDataContext } from "../../contexts/UserDataContexts";
 import { useNavigate } from "react-router-dom";
 import route from "../../routes/route.json";
+import style from "../ProductDetails/ProductDetails.module.css";
 
 const ProductDetails = ({ productId }) => {
   const [product, setProduct] = useState({});
@@ -44,44 +45,8 @@ const ProductDetails = ({ productId }) => {
     }
   };
 
-  const containerStyle = {
-    maxWidth: "100%",
-    padding: "20px",
-  };
-
-  const imageContainerStyle = {
-    width: "100%",
-    textAlign: "center",
-  };
-
-  const imageStyle = {
-    width: "50%",
-    height: "auto",
-    marginBottom: "15px",
-    display: "inline-block",
-  };
-
-  const quantityContainerStyle = {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    margin: "10px 0",
-  };
-
-  const quantityButtonStyle = {
-    fontSize: "1.5rem",
-    padding: "5px 10px",
-    marginBottom: "5px",
-    marginRight: "20px",
-  };
-
-  const descriptionStyle = {
-    marginTop: "20px",
-    fontSize: "1.2rem",
-  };
-
   return (
-    <div style={containerStyle}>
+    <div className={style.containerStyle}>
       {isLoader && (
         <div style={{ textAlign: "center" }}>
           <Spinner
@@ -112,8 +77,12 @@ const ProductDetails = ({ productId }) => {
 
       {!isLoader && !isError && (
         <div>
-          <div style={imageContainerStyle}>
-            <img src={product.image} style={imageStyle} alt={product.title} />
+          <div className={style.imageContainerStyle}>
+            <img
+              src={product.image}
+              className={style.imageStyle}
+              alt={product.title}
+            />
           </div>
           <div>
             <p
@@ -125,7 +94,7 @@ const ProductDetails = ({ productId }) => {
             >
               {product.title}
             </p>
-            <div style={quantityContainerStyle}>
+            <div className={style.quantityContainerStyle}>
               <span
                 style={{
                   fontSize: "1rem",
@@ -136,7 +105,7 @@ const ProductDetails = ({ productId }) => {
                 Quantity
               </span>
               <Button
-                style={quantityButtonStyle}
+                className={style.quantityButtonStyle}
                 onClick={() => dispatch(decreaseQuantityByCount())}
               >
                 -
@@ -151,7 +120,7 @@ const ProductDetails = ({ productId }) => {
                 {count}
               </span>
               <Button
-                style={quantityButtonStyle}
+                className={style.quantityButtonStyle}
                 onClick={() => dispatch(increaseQuantityByCount())}
               >
                 +
@@ -186,7 +155,7 @@ const ProductDetails = ({ productId }) => {
               </Button>
             </div>
           </div>
-          <p style={descriptionStyle}>{product.description}</p>
+          <p className={style.descriptionStyle}>{product.description}</p>
         </div>
       )}
     </div>
