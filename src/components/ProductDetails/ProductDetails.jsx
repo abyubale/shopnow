@@ -9,6 +9,8 @@ import {
   increaseQuantityByCount,
 } from "../AddSubItem/addSubSlice";
 import { UserDataContext } from "../../contexts/UserDataContexts";
+import { useNavigate } from "react-router-dom";
+import route from "../../routes/route.json";
 
 const ProductDetails = ({ productId }) => {
   const [product, setProduct] = useState({});
@@ -16,8 +18,9 @@ const ProductDetails = ({ productId }) => {
   const [isError, setIsError] = useState(false);
   const dispatch = useDispatch();
   const count = useSelector((state) => state.addsub.quantity);
+  const navigate = useNavigate();
 
-  const { ToastShowHandler, showToast } = useContext(UserDataContext);
+  const { ToastShowHandler, showToast, isUser } = useContext(UserDataContext);
 
   useEffect(() => {
     setIsLoader(true);
@@ -32,6 +35,14 @@ const ProductDetails = ({ productId }) => {
         setIsError(true);
       });
   }, [productId]);
+
+  const buyNowBtnHandler = () => {
+    if (!isUser) {
+      navigate(`/${route.LOGIN}`);
+    } else {
+      navigate(`/${route.ORDERSUCCESS}`);
+    }
+  };
 
   const containerStyle = {
     maxWidth: "100%",
@@ -166,7 +177,11 @@ const ProductDetails = ({ productId }) => {
               >
                 Add to Cart
               </Button>
-              <Button variant="success" style={{ margin: "0px 20px" }}>
+              <Button
+                variant="success"
+                style={{ margin: "0px 20px" }}
+                onClick={buyNowBtnHandler}
+              >
                 Buy now
               </Button>
             </div>

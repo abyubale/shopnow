@@ -34,7 +34,6 @@ const AllProducts = () => {
   };
 
   useEffect(() => {
-    setFilteredData(data);
     if (selectedOption === "1") {
       setFilteredData([...data].sort((a, b) => b.price - a.price));
       if (searchedItems.trim() !== "") searchFunction();

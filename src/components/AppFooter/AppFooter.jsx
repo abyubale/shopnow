@@ -15,7 +15,7 @@ function Copyright() {
         {new Date().getFullYear()}
         {"."}{" "}
         <Link color="inherit" className="text-decoration-none">
-          Made by AbHay UbaLE
+          Made by Abhay Ubale
         </Link>{" "}
         <Link color="inherit">
           <a

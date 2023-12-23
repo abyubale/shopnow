@@ -31,7 +31,10 @@ const AppHeader = () => {
       style={{ backgroundColor: "#002244" }}
     >
       <Navbar.Brand className={`fs-4 `}>
-        <NavLink to={route.HOME} className="text-decoration-none text-white">
+        <NavLink
+          to={route.HOME}
+          className="text-decoration-none text-white ms-4"
+        >
           ShopNow
         </NavLink>
       </Navbar.Brand>
@@ -99,13 +102,15 @@ const AppHeader = () => {
 
           <NavLink
             to={route.CART}
-            className={`nav-link ${cartActiveClasses} text-white`}
+            className={`nav-link ${cartActiveClasses} text-white me-5`}
             activeClassName="active"
           >
-            <Badge pill variant="primary">
-              {cartItems}
-            </Badge>
             <FontAwesomeIcon icon={faShoppingCart} />
+            {cartItems > 0 && (
+              <Badge pill variant="primary">
+                {cartItems}
+              </Badge>
+            )}
           </NavLink>
         </Nav>
       </Navbar.Collapse>

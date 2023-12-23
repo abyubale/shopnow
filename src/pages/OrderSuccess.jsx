@@ -1,6 +1,6 @@
 const OrderSuccess = () => {
   return (
-    <div style={{ minHeight: "64vh", marginTop: "30px" }}>
+    <div style={{ minHeight: "75vh", marginTop: "30px" }}>
       <div className="container-fluid">
         <div className="container text-center">
           <h1>Thank you.</h1>

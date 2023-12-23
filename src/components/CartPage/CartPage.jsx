@@ -48,14 +48,14 @@ const CartPage = () => {
             >
               {item.title}
             </Button>
-            <p className="fs-5 mt-2 text-dark">Rs. {item.price}</p>
+            <p className="fs-5 mt-2 text-dark">$ {item.price}</p>
           </div>
           <div className="d-flex flex-column align-items-sm-end mt-2">
             <div className="d-flex align-items-center mb-2 text-dark">
               <AddSubItem quantity={item.quantity} id={item.id} />
             </div>
             <p className="fs-5 mb-0 text-dark">
-              Total: Rs. {item.price * item.quantity}
+              Total: $ {item.price * item.quantity}
             </p>
           </div>
         </div>
@@ -100,7 +100,7 @@ const CartPage = () => {
           </div>
           {cartList}
           <div className="d-flex justify-content-end mt-3 mb-3 fs-4">
-            <p>Subtotal Rs. {subTotal}</p>
+            <p>Subtotal $ {subTotal}</p>
           </div>
           <div className="d-flex justify-content-end">
             <Button

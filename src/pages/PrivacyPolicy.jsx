@@ -35,8 +35,6 @@ const PrivacyPolicy = () => {
         </p>
       </section>
 
-      {/* ... Additional sections for each part of the privacy policy ... */}
-
       <section className="policy-section">
         <h2>9. Contact Information</h2>
         <p>
