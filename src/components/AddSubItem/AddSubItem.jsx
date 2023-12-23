@@ -1,6 +1,10 @@
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { decreaseQuantity, increaseQuantity, removeItem } from "./AddSubSlice";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  removeItem,
+} from "../AddSubItem/addSubSlice";
 import PropTypes from "prop-types";
 
 const AddSubItem = ({ quantity, id }) => {
